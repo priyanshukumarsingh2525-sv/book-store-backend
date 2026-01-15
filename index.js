@@ -24,7 +24,7 @@ app.use("/api/orders", ordersRoutes)
 app.use("/api/auth", userRoutes)
 app.use("/api/admin", adminRoutes)
 
- app.get('/', (req, res) => {
+ app.use('/', (req, res) => {
   console.log("GET / hit");
   res.send('Book server yoooo ')
 });
@@ -39,4 +39,4 @@ main().then(() => console.log("MongoDB connected successfully")).catch(err => co
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-module.exports = app;
+// module.exports = app;
