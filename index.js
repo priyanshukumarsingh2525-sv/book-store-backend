@@ -24,11 +24,12 @@ app.use("/api/orders", ordersRoutes)
 app.use("/api/auth", userRoutes)
 app.use("/api/admin", adminRoutes)
 
-async function main() {
-  await mongoose.connect(process.env.DB_URL);
-  app.get('/', (req, res) => {
+ app.get('/', (req, res) => {
   res.send('Book server yoooo ')
 });
+async function main() {
+  await mongoose.connect(process.env.DB_URL);
+
 }
 
 main().then(() => console.log("MongoDB connected successfully")).catch(err => console.log(err));
