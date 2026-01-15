@@ -24,10 +24,10 @@ app.use("/api/orders", ordersRoutes)
 app.use("/api/auth", userRoutes)
 app.use("/api/admin", adminRoutes)
 
- app.use('/', (req, res) => {
-  console.log("GET / hit");
-  res.send('Book server yoooo ')
+ app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
 });
+
 async function main() {
   await mongoose.connect(process.env.DB_URL);
 
@@ -36,7 +36,8 @@ async function main() {
 main().then(() => console.log("MongoDB connected successfully")).catch(err => console.log(err));
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-// module.exports = app;
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })
+
+module.exports = app;
