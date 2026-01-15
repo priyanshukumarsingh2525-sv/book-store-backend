@@ -25,6 +25,7 @@ app.use("/api/auth", userRoutes)
 app.use("/api/admin", adminRoutes)
 
  app.get('/', (req, res) => {
+  console.log("GET / hit");
   res.send('Book server yoooo ')
 });
 async function main() {
